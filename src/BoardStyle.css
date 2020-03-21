@@ -1,0 +1,132 @@
+
+h1{
+    text-align:center;
+    font-size: 24px;
+    padding: 0px;
+
+}
+h2{
+    text-align:center;
+    font-size: 14px;
+    line-height:0.01;
+
+}
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: flex-start;
+    min-width: 1024px;
+    min-height: 768px; 
+    margin-bottom: 0%;
+    padding-bottom: 0%;
+}
+
+.statisticInfo{
+    order: 2;
+    width: 300px;
+    height:500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-right:auto;  
+    align-content: space-between;
+    margin: 0%;
+    padding: 0%;
+}
+.board{
+    order: 1;
+    border:6px solid #000;
+    border-collapse:collapse;
+    width: 500px;
+    height:500px;
+    background-color:lightseagreen;
+    margin-right:auto;
+    pointer-events: auto;
+    margin-right: 5%;
+}
+table.board tr td{
+    border:2px solid #000;
+    border-collapse:collapse;
+    width: 50px;
+    height: 50px;
+    text-align:center;
+}
+.piece{  
+    border:1px solid #000;    
+    border-radius: 50%;
+    display:inline-flex;
+    height: 35px;
+    width: 35px;
+    background-color: #FFF;
+    visibility:hidden;
+}
+
+.pieceCounterTable{
+    border-collapse:collapse;
+    width: 200px;
+    height: 60px;
+    border:1px solid #000;  
+ 
+}
+.pieceCounterCell{
+    border:1px solid #000;  
+    height: 50px;
+    width: 50px;
+    padding: 0%;
+}
+.timer{
+    flex-direction: row;
+}
+.player1{
+    border:1px solid #000;  
+    background-color:#000;  
+    border-radius: 50%;
+    display:inline-flex;
+    height: 35px;
+    width: 35px;
+    visibility:show;
+    padding: 0%;
+}
+.player2{
+    border:1px solid #000;  
+    background-color:#FFF;  
+    border-radius: 50%;
+    display:inline-flex;
+    height: 35px;
+    width: 35px;
+    
+}
+.counter{
+    padding: 0%;
+}
+.endGame{
+    visibility: hidden;
+    width: 500px;
+    height: 500px;
+    background-color: aquamarine;
+    border-radius: 7px;
+    position: absolute;
+    opacity: 0.8;
+    border: none;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    align-items: center;
+}
+
+.winnerMessage {
+    background-color: aquamarine;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    text-align: center;
+    font-size: 2em;
+  
+}
+
+.AffectedCellsNum{
+    text-align: center;
+    pointer-events: none;
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Reversi Game</title>
+        <link rel="stylesheet" type="text/css" href="src/BoardStyle.css">
+    </head> 
+    <body>
+        <div class = "endGame">
+            <div id = "winnerMessage"><span></span></div>
+        </div>
+        <div class = "statisticInfo">
+            <h1 class = "title">Reversi Game</h1>
+            <h2 class = "nowPlayingLabel"></h2>
+            <div class = "timer"><label id="minutes">00</label>:<label id="seconds">00</label></div>
+            <div id="turnsCounter">Turns: <span></span></div>
+            <div id = "averageTurnTime">Avg turn time: <span id="avgMinutes">00</span>:<span id="avgSeconds">00</span></div>
+            <div id = "totalAverageTurnTime">Total avg turn time: <span id="totalAvgMinutes">00</span>:<span id="totalAvgSeconds">00</span></div>
+            <div id="justTwoBlack">2 black pieces on board: <span></span></div>
+            <div id="justTwoWhite">2 white pieces on board: <span></span></div> 
+            <div id="BlackPieces">Black pieces: <span></span></div>
+            <div id="WhitePieces">White pieces: <span></span></div>
+
+            <button type ="button" id ="endGameButton">Give up</button>  
+            <button type = "button" id = "newGameButton">New Game</button>
+            <div><input id="traineeRadioCheckBox" type="checkbox" name="traineeModeEnabled">Trainee mode<br></div>
+        </div>
+       <table class="board">
+           <!--1/10-->
+           <tr>
+            <td class="cell" id="0"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="1"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="2"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="3"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="4"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="5"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="6"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="7"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="8"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="9"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+           </tr>
+           <!--2/10-->
+           <tr>
+            <td class="cell" id="10"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="11"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="12"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="13"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="14"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="15"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="16"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="17"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="18"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="19"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            </tr>
+            <!--3/10-->
+           <tr>
+            <td class="cell" id="20"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="21"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="22"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="23"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="24"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="25"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="26"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="27"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="28"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="29"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            </tr>
+            <!--4/10-->
+           <tr>
+            <td class="cell" id="30"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="31"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="32"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="33"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="34"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="35"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="36"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="37"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="38"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="39"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            </tr>
+            <!--5/10-->
+           <tr>
+            <td class="cell" id="40"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="41"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="42"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="43"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="44"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="45"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="46"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="47"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="48"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="49"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            </tr>
+            <!--6/10-->
+           <tr>
+            <td class="cell" id="50"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="51"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="52"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="53"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="54"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="55"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="56"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="57"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="58"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="59"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            </tr>
+            <!--7/10-->
+           <tr>
+            <td class="cell" id="60"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="61"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="62"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="63"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="64"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="65"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="66"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="67"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="68"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="69"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            </tr>
+            <!--8/10-->
+           <tr>
+            <td class="cell" id="70"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="71"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="72"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="73"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="74"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="75"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="76"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="77"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="78"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="79"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            </tr>
+            <!--9/10-->
+           <tr>
+            <td class="cell" id="80"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="81"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="82"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="83"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="84"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="85"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="86"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="87"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="88"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="89"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            </tr>
+            <!--10/10-->
+           <tr>
+            <td class="cell" id="90"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="91"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="92"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="93"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="94"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="95"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="96"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="97"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="98"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+            <td class="cell" id="99"><span class = "piece"></span><span class = "AffectedCellsNum"></span></td>
+           </tr>       
+       </table>
+       <script src="src\reverciScript.js"></script>
+    </body>
+</html>
